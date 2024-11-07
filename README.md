@@ -1,5 +1,22 @@
 ## CS5800 Final Project - Team 3Cs Project
 
+### Table of Contents
+
+1. [Project Overview](#project-overview)
+2. [Team Name: 3Cs](#team-name-3cs)
+3. [Team Members](#team-members)
+4. [Basic Information](#basic-information)
+5. [Project Structure](#project-structure)
+6. [Dataset](#dataset)
+7. [Branching Strategy](#branching-strategy)
+8. [Commit and Pull Request Guidelines](#commit-and-pull-request-guidelines)
+9. [Collaboration Workflow](#collaboration-workflow)
+   - [Clone the Repository](#1-clone-the-repository)
+   - [Create a Feature Branch](#2-create-a-feature-branch)
+   - [Commit and Push Your Changes](#3-commit-and-push-your-changes)
+   - [Create a Pull Request (PR)](#4-create-a-pull-request-pr)
+   - [Merge Changes](#5-merge-changes)
+   
 ### Project Overview
 This is the team project of CS5800 Algorithms. In this project, we aim to implement algorithms k-Nearest Neighbors for continuous variables with tested program and GUI. The project will be divided into multiple modules, with each team member responsible for specific tasks.
 ### Team Name: 3Cs
@@ -25,7 +42,7 @@ This is the team project of CS5800 Algorithms. In this project, we aim to implem
 * DataProcessorModule   [Erdun]
 ```
 ### Dataset
-[iris.csv]()
+[iris.csv](https://github.com/ErdunE/CS5800-Final-Project/blob/main/iris.csv)
 
 ### Branching Strategy
 * Main Branch: main
