@@ -77,7 +77,7 @@ class TestKNearestNeighbor(unittest.TestCase):
         # Expecting a high accuracy rate
         self.assertGreaterEqual(accuracy, 90.0)  
         print("Accuracy: ", accuracy)
-        print("Expected accuracy: 90.0")
+        print("Expected least accuracy: 90.0")
 
 if __name__ == '__main__':
     unittest.main()
