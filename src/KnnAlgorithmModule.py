@@ -5,6 +5,7 @@ This module includes the functionalities list below:
 Calculate the distance between data points based on the SL, SW, PL, and PW attributes;
 Find the k nearest neighbors of a training point;
 Categorize the the variety of a data point.
+Check the accuracy of this knn based prediction. 
 
 Author: Hailee Wang
 Version: 1.0
