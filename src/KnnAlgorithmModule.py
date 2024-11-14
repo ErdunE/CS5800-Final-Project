@@ -32,6 +32,8 @@ class KnnAlgorithmModule:
         """
         Calculate the Euclidean distance between two data points.
         Each data point is a dictionary includes 'SL', 'SW', 'PL', 'PW'.
+
+        Return: the distance between point1 and point2.
         """
         return math.sqrt(
             (point1['SL'] - point2['SL']) ** 2 +
@@ -43,6 +45,8 @@ class KnnAlgorithmModule:
     def k_nearest_neighbor(self, data_point):
         """
         Find the k nearest neighbors of the given data point.
+
+        Return: the k nearest neighbors of data_point.
         """
         distances = []
         for train_data in self.data:
@@ -59,6 +63,8 @@ class KnnAlgorithmModule:
         """
         Predict the variety category of this given data point
         by learning from its k nearest neighbors.
+
+        Return: the predicted variety of data_point.
         """
         nearest_neighbors = self.k_nearest_neighbor(data_point)
         
@@ -73,6 +79,8 @@ class KnnAlgorithmModule:
     def calculate_accuracy(self, test_data):
         """
         Check the accuracy of this Knn algorithm model using some test data.
+
+        Return: a percentage that represent the accuracy of the prediction.
         """
         correct = 0
         for data_point in test_data:
