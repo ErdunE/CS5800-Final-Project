@@ -1,21 +1,21 @@
 ## Timeline and Status of Project Milestones
 
-| Task                                     | Start Date   | End Date     | Status                                                                 |
-|------------------------------------------|--------------|--------------|------------------------------------------------------------------------|
-| Project Start                            | Oct 21, 2024 | -            | ![Completed](https://img.shields.io/badge/Status-Completed-brightgreen) |
-| Confirm Team Members and Team Name       | Oct 21, 2024 | Nov 08, 2024 | ![Completed](https://img.shields.io/badge/Status-Completed-brightgreen) |
-| Select Algorithm                         | Nov 08, 2024 | Nov 22, 2024 | ![Completed](https://img.shields.io/badge/Status-Completed-brightgreen) |
-| Brainstorm and Research Materials        | Oct 21, 2024 | Nov 06, 2024 | ![Completed](https://img.shields.io/badge/Status-Completed-brightgreen) |
-| Confirm Plan and Assign Tasks            | Nov 06, 2024 | Nov 07, 2024 | ![Completed](https://img.shields.io/badge/Status-Completed-brightgreen) |
-| Complete Individual Coding Tasks         | Nov 07, 2024 | Nov 15, 2024 | ![In Progress](https://img.shields.io/badge/Status-In%20Progress-yellow) |
-| Code Integration, Testing, and Debugging | Nov 16, 2024 | Nov 20, 2024 | ![Planned](https://img.shields.io/badge/Status-Planned-lightgrey)       |
-| Discuss and Divide Paper Tasks           | Nov 20, 2024 | Nov 21, 2024 | ![Planned](https://img.shields.io/badge/Status-Planned-lightgrey)       |
-| Complete Individual Paper Sections       | Nov 21, 2024 | Nov 23, 2024 | ![Planned](https://img.shields.io/badge/Status-Planned-lightgrey)       |
-| Merge and Refine Paper                   | Nov 23, 2024 | Nov 25, 2024 | ![Planned](https://img.shields.io/badge/Status-Planned-lightgrey)       |
-| Discuss and Plan Presentation            | Nov 25, 2024 | Nov 25, 2024 | ![Planned](https://img.shields.io/badge/Status-Planned-lightgrey)       |
-| Complete Individual Presentation Tasks   | Nov 25, 2024 | Dec 02, 2024 | ![Planned](https://img.shields.io/badge/Status-Planned-lightgrey)       |
-| Merge Presentation and Practice          | Dec 02, 2024 | Dec 09, 2024 | ![Planned](https://img.shields.io/badge/Status-Planned-lightgrey)       |
-| Project End                              | -            | Dec 09, 2024 | ![Planned](https://img.shields.io/badge/Status-Planned-lightgrey)       |
+| Task                                     | Start Date   | End Date     | Status                                                                                                                                                                                                                       |
+|------------------------------------------|--------------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Project Start                            | Oct 21, 2024 | -            | ![Completed](https://img.shields.io/badge/Status-Completed-brightgreen)                                                                                                                                                      |
+| Confirm Team Members and Team Name       | Oct 21, 2024 | Nov 08, 2024 | ![Completed](https://img.shields.io/badge/Status-Completed-brightgreen)                                                                                                                                                      |
+| Select Algorithm                         | Nov 08, 2024 | Nov 22, 2024 | ![Completed](https://img.shields.io/badge/Status-Completed-brightgreen)                                                                                                                                                      |
+| Brainstorm and Research Materials        | Oct 21, 2024 | Nov 06, 2024 | ![Completed](https://img.shields.io/badge/Status-Completed-brightgreen)                                                                                                                                                      |
+| Confirm Plan and Assign Tasks            | Nov 06, 2024 | Nov 07, 2024 | ![Completed](https://img.shields.io/badge/Status-Completed-brightgreen)                                                                                                                                                      |
+| Complete Individual Coding Tasks         | Nov 07, 2024 | Nov 15, 2024 | ![Completed](https://img.shields.io/badge/Erdun-Completed-brightgreen)<br/>![Completed](https://img.shields.io/badge/Hailee-Completed-brightgreen)<br/>![Overdue](https://img.shields.io/badge/Kai-Overdue-orange) |
+| Code Integration, Testing, and Debugging | Nov 16, 2024 | Nov 20, 2024 | ![Planned](https://img.shields.io/badge/Status-Planned-lightgrey)                                                                                                                                                            |
+| Discuss and Divide Paper Tasks           | Nov 20, 2024 | Nov 21, 2024 | ![Planned](https://img.shields.io/badge/Status-Planned-lightgrey)                                                                                                                                                            |
+| Complete Individual Paper Sections       | Nov 21, 2024 | Nov 23, 2024 | ![Planned](https://img.shields.io/badge/Status-Planned-lightgrey)                                                                                                                                                            |
+| Merge and Refine Paper                   | Nov 23, 2024 | Nov 25, 2024 | ![Planned](https://img.shields.io/badge/Status-Planned-lightgrey)                                                                                                                                                            |
+| Discuss and Plan Presentation            | Nov 25, 2024 | Nov 25, 2024 | ![Planned](https://img.shields.io/badge/Status-Planned-lightgrey)                                                                                                                                                            |
+| Complete Individual Presentation Tasks   | Nov 25, 2024 | Dec 02, 2024 | ![Planned](https://img.shields.io/badge/Status-Planned-lightgrey)                                                                                                                                                            |
+| Merge Presentation and Practice          | Dec 02, 2024 | Dec 09, 2024 | ![Planned](https://img.shields.io/badge/Status-Planned-lightgrey)                                                                                                                                                            |
+| Project End                              | -            | Dec 09, 2024 | ![Planned](https://img.shields.io/badge/Status-Planned-lightgrey)                                                                                                                                                            |
 
 ## CS5800 Final Project - Team 3Cs Project
 
