@@ -1,47 +1,54 @@
 """
 Controller
 
-This module is responsible to controll all program, connect other classes.
+This module is responsible for connect Visualizer, KnnAlgorithmModule and DaraProcessorModule.
 
 Author: Kai
 Version: 1.0
-Date: 2024-11-13
+Date: 2024-11-18
 """
+import tkinter as tk
 from DataProcessorModule import DataProcessorModule
 from KnnAlgorithmModule import KnnAlgorithmModule
-from Visualizer import Visualizer
+from VisualizerModule import VisualizerModule
 
-
-# src/Controller.py
 
 class Controller:
+    """
+    A class used to control other classes. It processes the raw data and use it to train Knn algorithm and visualize all data.
 
+    Methods:
+        __init__  : Processes data and train the Knn algorithm.
+        run : start the Visualizer Module.
+    """
     def __init__(self):
+        """
+        Process data and train the Knn algorithm.
+        """
+        # initial modules
+        self.processor = DataProcessorModule()
+        self.knn = KnnAlgorithmModule(k=3)
+
+        # load data from processor
+        self.data = self.processor.load_dataset()
+
+        # process and split data
+        self.processed_data = self.processor.data_processing(self.data)
+        self.train_data, self.test_data = self.processor.train_test_split(self.processed_data)
+
+        # train KnnAlgorithm
+        self.knn.load_data(self.train_data)
 
     def run(self):
-        processor = DataProcessorModule
-        KnnAlgo = KnnAlgorithmModule
-        visual = Visualizer
-        visual.init()
-        raw_data = processor.load_dataset(self.file_path)
-        processed_data = processor.data_processing(raw_data)
-        self.train_data, self.test_data = processor.train_test_split(processed_data)
-        visual.receive_training_data(self.train_data)
-        visual.show_training_graph()
-        KnnAlgo.Calculate_distance(self.train_data)
-        KnnAlgo.K_nearest_neighbor(self.train_data)
-        KnnAlgo.Calculate_distance(self.test_data)
-        KnnAlgo.K_nearest_neighbor(self.test_data)
-        KnnAlgo.calculate_accuracy()
-        i = "1"
-        while( i!="0"):
-            visual.input()
-            inputdata = visual.send_datapoint()
-            KnnAlgo.categorization(inputdata)
-            visual.receive_variety()
-            visual.show_variety()
-            i = input("Enter number 0 to quit")
+        """
+        Run the whole program, draw two graphs to visualize the iris_data_set and let user
+        input new iris data to predict the variety.
+        """
+        #create tkinter GUI
+        root = tk.Tk()
 
-        return
+        #draw the GUI
+        VisualizerModule(root, initial_data=self.train_data)
 
-
+        #keep running the algorithm
+        root.mainloop()
