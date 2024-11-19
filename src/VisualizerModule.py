@@ -33,6 +33,8 @@ class VisualizerModule:
         # Initial tk.
         self.root = root
         self.root.title("Knn Algorithm Visualization")
+        self.root.geometry("1920x1080")  # 设置初始窗口大小为全屏
+        self.root.state("zoomed")
 
         # Load data.
         self.data = initial_data
@@ -45,70 +47,77 @@ class VisualizerModule:
         # Add program description at the top
         self.description = tk.Label(
             self.root,
-            text="KNN Algorithm Visualization\nVisualize Iris Data and Predict Varieties\nYou can input some iris data below to make a prediction, and the predicted variety will be shown on the graph.",
-            font=("Arial", 16),
+            text="KNN Algorithm Visualization\nVisualize Iris Data and Predict Varieties",
+            font=("Arial", 25),
             justify="center"
         )
         self.description.pack(side=tk.TOP, pady=10)
 
-        # Create the canvas frame
-        self.canvas_frame = tk.Frame(self.root)
-        self.canvas_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=False)
+        # Create the canvas frame and contain two graphs
+        self.graphs_frame = tk.Frame(self.root)
+        self.graphs_frame.pack(side=tk.TOP, pady=50)
 
-        # Create canvases for graphs
-        self.canvasSLSW_frame = tk.Frame(self.canvas_frame)
-        self.canvasSLSW_frame.grid(row=0, column=0, padx=10, pady=10)
+        # Graph 1 frame
+        self.graph1_frame = tk.Frame(self.graphs_frame)
+        self.graph1_frame.pack(side=tk.LEFT, padx=50)
 
-        self.canvasPLPW_frame = tk.Frame(self.canvas_frame)
-        self.canvasPLPW_frame.grid(row=0, column=1, padx=10, pady=10)
-
-        self.canvasSLSW = tk.Canvas(self.canvasSLSW_frame, width=550, height=550, bg="white")
+        self.canvasSLSW = tk.Canvas(self.graph1_frame, width=550, height=550, bg="white")
         self.canvasSLSW.pack()
 
-        self.canvasPLPW = tk.Canvas(self.canvasPLPW_frame, width=550, height=550, bg="white")
-        self.canvasPLPW.pack()
-
-        # Add labels below the graphs
-        self.slsp_label = tk.Label(self.canvasSLSW_frame, text="Graph 1: Sepal Length vs Sepal Width", font=("Arial", 12))
+        self.slsp_label = tk.Label(self.graph1_frame, text="Graph 1: Sepal Length vs Sepal Width", font=("Arial", 12))
         self.slsp_label.pack(pady=5)
 
-        self.plpw_label = tk.Label(self.canvasPLPW_frame, text="Graph 2: Petal Length vs Petal Width", font=("Arial", 12))
+        self.sl_sw_frame = tk.Frame(self.graph1_frame)
+        self.sl_sw_frame.pack()
+
+        tk.Label(self.sl_sw_frame, text="Sepal Length:").grid(row=0, column=0, padx=5, pady=5)
+        self.sl_entry = tk.Entry(self.sl_sw_frame, width=10)
+        self.sl_entry.grid(row=0, column=1, padx=5, pady=5)
+
+        tk.Label(self.sl_sw_frame, text="Sepal Width:").grid(row=1, column=0, padx=5, pady=5)
+        self.sw_entry = tk.Entry(self.sl_sw_frame, width=10)
+        self.sw_entry.grid(row=1, column=1, padx=5, pady=5)
+
+        # Graph 2 frame
+        self.graph2_frame = tk.Frame(self.graphs_frame)
+        self.graph2_frame.pack(side=tk.LEFT, padx=50)
+
+        self.canvasPLPW = tk.Canvas(self.graph2_frame, width=550, height=550, bg="white")
+        self.canvasPLPW.pack()
+
+        self.plpw_label = tk.Label(self.graph2_frame, text="Graph 2: Petal Length vs Petal Width", font=("Arial", 12))
         self.plpw_label.pack(pady=5)
 
+        self.pl_pw_frame = tk.Frame(self.graph2_frame)
+        self.pl_pw_frame.pack()
 
-        self.numeric_label = tk.Label(self.root, text="Your input should be numeric and between 0 and 10. ",font=("Arial", 12),justify="center")
-        self.numeric_label.pack(pady=5)
-
-        # Add input fields below the first graph
-        self.sl_sw_frame = tk.Frame(self.canvasSLSW_frame)
-        self.sl_sw_frame.pack(side=tk.BOTTOM, pady=10)
-
-        tk.Label(self.sl_sw_frame, text="Sepal Length:").grid(row=0, column=0, sticky="e")
-        self.sl_entry = tk.Entry(self.sl_sw_frame, width=10)
-        self.sl_entry.grid(row=0, column=1)
-
-        tk.Label(self.sl_sw_frame, text="Sepal Width:").grid(row=1, column=0, sticky="e")
-        self.sw_entry = tk.Entry(self.sl_sw_frame, width=10)
-        self.sw_entry.grid(row=1, column=1)
-
-        # Add input fields below the second graph
-        self.pl_pw_frame = tk.Frame(self.canvasPLPW_frame)
-        self.pl_pw_frame.pack(side=tk.BOTTOM, pady=10)
-
-        tk.Label(self.pl_pw_frame, text="Petal Length:").grid(row=0, column=0, sticky="e")
+        tk.Label(self.pl_pw_frame, text="Petal Length:").grid(row=0, column=0, padx=5, pady=5)
         self.pl_entry = tk.Entry(self.pl_pw_frame, width=10)
-        self.pl_entry.grid(row=0, column=1)
+        self.pl_entry.grid(row=0, column=1, padx=5, pady=5)
 
-        tk.Label(self.pl_pw_frame, text="Petal Width:").grid(row=1, column=0, sticky="e")
+        tk.Label(self.pl_pw_frame, text="Petal Width:").grid(row=1, column=0, padx=5, pady=5)
         self.pw_entry = tk.Entry(self.pl_pw_frame, width=10)
-        self.pw_entry.grid(row=1, column=1)
+        self.pw_entry.grid(row=1, column=1, padx=5, pady=5)
 
-        # Add the predict button below both graphs
+        # Add program instruction after the graph
+        self.instruction = tk.Label(
+            self.root,
+            text="You can input some iris data below to make a prediction, and the predicted variety will be shown on the graph.\n"
+                 "Please enter numbers between 0 and 10.",
+            font=("Arial", 16),
+            justify="center"
+        )
+        self.instruction.pack(side=tk.TOP, pady=0)
+
+        # Add Make Prediction Button
         self.predict_button = tk.Button(self.root, text="Make Prediction", command=self.Input_predict)
-        self.predict_button.pack(side=tk.BOTTOM, pady=10)
+        self.predict_button.pack(side=tk.BOTTOM, pady=30)
 
         self.result_label = tk.Label(self.root, text="Predicted Variety: ", font=("Arial", 14))
-        self.result_label.pack(side=tk.BOTTOM, fill=tk.X)
+        self.result_label.pack(side=tk.BOTTOM, pady=5)
+
+
+
 
         # Draw the first graph
         self.Draw_First_Graph()
