@@ -33,7 +33,6 @@ class VisualizerModule:
         # Initial tk.
         self.root = root
         self.root.title("Knn Algorithm Visualization")
-        self.root.geometry("1920x1080")  # 设置初始窗口大小为全屏
         self.root.state("zoomed")
 
         # Load data.
@@ -55,7 +54,7 @@ class VisualizerModule:
 
         # Create the canvas frame and contain two graphs
         self.graphs_frame = tk.Frame(self.root)
-        self.graphs_frame.pack(side=tk.TOP, pady=50)
+        self.graphs_frame.pack(side=tk.TOP, pady=0)
 
         # Graph 1 frame
         self.graph1_frame = tk.Frame(self.graphs_frame)
@@ -99,25 +98,26 @@ class VisualizerModule:
         self.pw_entry = tk.Entry(self.pl_pw_frame, width=10)
         self.pw_entry.grid(row=1, column=1, padx=5, pady=5)
 
+        # Create a bottom frame to contain the instruction, predict button and result label
+        self.bottom_frame = tk.Frame(self.root)
+        self.bottom_frame.pack(side=tk.BOTTOM, pady=30)
+
+        # Add Make Prediction Button
+        self.predict_button = tk.Button(self.bottom_frame, text="Make Prediction", command=self.Input_predict)
+        self.predict_button.pack(side=tk.BOTTOM, pady=5)
+
+        self.result_label = tk.Label(self.bottom_frame, text="Predicted Variety: ", font=("Arial", 14))
+        self.result_label.pack(side=tk.BOTTOM, pady=5)
+
         # Add program instruction after the graph
         self.instruction = tk.Label(
-            self.root,
+            self.bottom_frame,
             text="You can input some iris data below to make a prediction, and the predicted variety will be shown on the graph.\n"
                  "Please enter numbers between 0 and 10.",
             font=("Arial", 16),
             justify="center"
         )
-        self.instruction.pack(side=tk.TOP, pady=0)
-
-        # Add Make Prediction Button
-        self.predict_button = tk.Button(self.root, text="Make Prediction", command=self.Input_predict)
-        self.predict_button.pack(side=tk.BOTTOM, pady=30)
-
-        self.result_label = tk.Label(self.root, text="Predicted Variety: ", font=("Arial", 14))
-        self.result_label.pack(side=tk.BOTTOM, pady=5)
-
-
-
+        self.instruction.pack(side=tk.BOTTOM, pady=5)
 
         # Draw the first graph
         self.Draw_First_Graph()
