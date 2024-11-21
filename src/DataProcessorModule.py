@@ -65,7 +65,8 @@ class DataProcessorModule:
 
     def train_test_split(self, processed_data, test_size=0.2):
         """
-        Splits the processed dataset first 20% into a training set and 80% into a testing set.
+        Splits the processed dataset into training and testing sets.
+        By default, 80% of the data is used for training, and 20% is used for testing.
         
         Returns:
             tuple: A tuple containing two lists:
