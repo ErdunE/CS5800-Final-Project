@@ -4,8 +4,8 @@ VisualizerModule
 The Visualize data and make prediction after user input
 
 Author: Kai
-Version: 2.0
-Date: 2024-11-19
+Version: 3.0
+Date: 2024-11-22
 """
 import tkinter as tk
 from KnnAlgorithmModule import KnnAlgorithmModule
@@ -20,7 +20,7 @@ class VisualizerModule:
            initial_graph : Draw the graph with training data.
            draw_axes : Draw X-axis and Y-axis on the graph.
            draw_point : Draw the point on the graph.
-           input_predict: Let user input new data of iris then shows the predicted variety on GUI and draw it on the graph.
+           input_prediction: Let user input new data of iris then shows the predicted variety on GUI and draw it on the graph.
        """
 
     # initial modules
@@ -103,7 +103,7 @@ class VisualizerModule:
         self.bottom_frame.pack(side=tk.BOTTOM, pady=30)
 
         # Add Make Prediction Button
-        self.predict_button = tk.Button(self.bottom_frame, text="Make Prediction", command=self.input_predict)
+        self.predict_button = tk.Button(self.bottom_frame, text="Make Prediction", command=self.input_prediction)
         self.predict_button.pack(side=tk.BOTTOM, pady=5)
 
         self.result_label = tk.Label(self.bottom_frame, text="Predicted Variety: ", font=("Arial", 14))
@@ -175,7 +175,7 @@ class VisualizerModule:
             x_transform - 5, y_transform - 5, x_transform + 5, y_transform + 5, fill=color, outline=color
         )
 
-    def input_predict(self):
+    def input_prediction(self):
         """
         Let user input new data of iris then shows the predicted variety on GUI and draw it on the graph.
         """
