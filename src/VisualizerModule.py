@@ -17,10 +17,10 @@ class VisualizerModule:
 
        Methods:
            __init__ : Draw the GUI.
-           Draw_First_Graph : Draw the graph with training data.
-           Draw_axes : Draw X-axis and Y-axis on the graph.
-           Draw_point : Draw the point on the graph.
-           Input_predict: Let user input new data of iris then shows the predicted variety on GUI and draw it on the graph.
+           initial_graph : Draw the graph with training data.
+           draw_axes : Draw X-axis and Y-axis on the graph.
+           draw_point : Draw the point on the graph.
+           input_predict: Let user input new data of iris then shows the predicted variety on GUI and draw it on the graph.
        """
 
     # initial modules
@@ -103,7 +103,7 @@ class VisualizerModule:
         self.bottom_frame.pack(side=tk.BOTTOM, pady=30)
 
         # Add Make Prediction Button
-        self.predict_button = tk.Button(self.bottom_frame, text="Make Prediction", command=self.Input_predict)
+        self.predict_button = tk.Button(self.bottom_frame, text="Make Prediction", command=self.input_predict)
         self.predict_button.pack(side=tk.BOTTOM, pady=5)
 
         self.result_label = tk.Label(self.bottom_frame, text="Predicted Variety: ", font=("Arial", 14))
@@ -120,22 +120,22 @@ class VisualizerModule:
         self.instruction.pack(side=tk.BOTTOM, pady=5)
 
         # Draw the first graph
-        self.Draw_First_Graph()
+        self.initial_graph()
 
-    def Draw_First_Graph(self):
+    def initial_graph(self):
         """
         Draw the graph with training data.
         """
         # Draw axes
-        self.Draw_axes(self.canvasSLSW, "Sepal Length (cm)", "Sepal Width (cm)")
-        self.Draw_axes(self.canvasPLPW, "Petal Length (cm)", "Petal Width (cm)")
+        self.draw_axes(self.canvasSLSW, "Sepal Length (cm)", "Sepal Width (cm)")
+        self.draw_axes(self.canvasPLPW, "Petal Length (cm)", "Petal Width (cm)")
 
         # Draw points for initial data
         for point in self.data:
-            self.Draw_point(self.canvasSLSW, point['SL'], point['SW'], self.colors[point['variety']])
-            self.Draw_point(self.canvasPLPW, point['PL'], point['PW'], self.colors[point['variety']])
+            self.draw_point(self.canvasSLSW, point['SL'], point['SW'], self.colors[point['variety']])
+            self.draw_point(self.canvasPLPW, point['PL'], point['PW'], self.colors[point['variety']])
 
-    def Draw_axes(self, canvas, xlabel, ylabel):
+    def draw_axes(self, canvas, xlabel, ylabel):
         """
         Draw X-axis and Y-axis on the graph.
         """
@@ -164,7 +164,7 @@ class VisualizerModule:
         canvas.create_text(480, 110, text="New Point", fill="black", font=("Arial", 10), anchor="ne")
         canvas.create_text(490, 110, text="●", fill="orange", font=("Arial", 10), anchor="ne")
 
-    def Draw_point(self, canvas, x, y, color):
+    def draw_point(self, canvas, x, y, color):
         """
         Draw the point on the graph
         """
@@ -175,7 +175,7 @@ class VisualizerModule:
             x_transform - 5, y_transform - 5, x_transform + 5, y_transform + 5, fill=color, outline=color
         )
 
-    def Input_predict(self):
+    def input_predict(self):
         """
         Let user input new data of iris then shows the predicted variety on GUI and draw it on the graph.
         """
@@ -202,14 +202,14 @@ class VisualizerModule:
 
         # Update previous points to their respective colors
         for point in self.user_points:
-            self.Draw_point(self.canvasSLSW, point['SL'], point['SW'], self.colors[point['variety']])
-            self.Draw_point(self.canvasPLPW, point['PL'], point['PW'], self.colors[point['variety']])
+            self.draw_point(self.canvasSLSW, point['SL'], point['SW'], self.colors[point['variety']])
+            self.draw_point(self.canvasPLPW, point['PL'], point['PW'], self.colors[point['variety']])
 
         # Add new point
         input_data['variety'] = variety
         self.user_points.append(input_data)
-        self.Draw_point(self.canvasSLSW, sl, sw, self.new_point)
-        self.Draw_point(self.canvasPLPW, pl, pw, self.new_point)
+        self.draw_point(self.canvasSLSW, sl, sw, self.new_point)
+        self.draw_point(self.canvasPLPW, pl, pw, self.new_point)
 
         # Show prediction
         self.result_label.config(text=f"Predicted Variety: {variety}")
