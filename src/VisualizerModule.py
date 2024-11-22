@@ -5,7 +5,7 @@ The Visualize data and make prediction after user input
 
 Author: Kai
 Version: 2.0
-Date: 2024-11-19
+Date: 2024-11-21
 """
 import tkinter as tk
 from KnnAlgorithmModule import KnnAlgorithmModule
