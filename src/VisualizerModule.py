@@ -47,7 +47,7 @@ class VisualizerModule:
         self.description = tk.Label(
             self.root,
             text="KNN Algorithm Visualization\nVisualize Iris Data and Predict Varieties",
-            font=("Arial", 25),
+            font=("Arial", 30),
             justify="center"
         )
         self.description.pack(side=tk.TOP, pady=10)
@@ -60,43 +60,43 @@ class VisualizerModule:
         self.graph1_frame = tk.Frame(self.graphs_frame)
         self.graph1_frame.pack(side=tk.LEFT, padx=50)
 
-        self.canvasSLSW = tk.Canvas(self.graph1_frame, width=550, height=550, bg="white")
+        self.canvasSLSW = tk.Canvas(self.graph1_frame, width=770, height=770, bg="white")
         self.canvasSLSW.pack()
 
-        self.slsp_label = tk.Label(self.graph1_frame, text="Graph 1: Sepal Length vs Sepal Width", font=("Arial", 12))
+        self.slsp_label = tk.Label(self.graph1_frame, text="Graph 1: Sepal Length vs Sepal Width", font=("Arial", 18))
         self.slsp_label.pack(pady=5)
 
         self.sl_sw_frame = tk.Frame(self.graph1_frame)
         self.sl_sw_frame.pack()
 
-        tk.Label(self.sl_sw_frame, text="Sepal Length:").grid(row=0, column=0, padx=5, pady=5)
-        self.sl_entry = tk.Entry(self.sl_sw_frame, width=10)
-        self.sl_entry.grid(row=0, column=1, padx=5, pady=5)
+        tk.Label(self.sl_sw_frame, text="Sepal Length:").grid(row=0, column=0, padx=15, pady=15)
+        self.sl_entry = tk.Entry(self.sl_sw_frame, width=20)
+        self.sl_entry.grid(row=0, column=1, padx=15, pady=15)
 
-        tk.Label(self.sl_sw_frame, text="Sepal Width:").grid(row=1, column=0, padx=5, pady=5)
-        self.sw_entry = tk.Entry(self.sl_sw_frame, width=10)
-        self.sw_entry.grid(row=1, column=1, padx=5, pady=5)
+        tk.Label(self.sl_sw_frame, text="Sepal Width:").grid(row=1, column=0, padx=15, pady=15)
+        self.sw_entry = tk.Entry(self.sl_sw_frame, width=20)
+        self.sw_entry.grid(row=1, column=1, padx=15, pady=15)
 
         # Graph 2 frame
         self.graph2_frame = tk.Frame(self.graphs_frame)
         self.graph2_frame.pack(side=tk.LEFT, padx=50)
 
-        self.canvasPLPW = tk.Canvas(self.graph2_frame, width=550, height=550, bg="white")
+        self.canvasPLPW = tk.Canvas(self.graph2_frame, width=770, height=770, bg="white")
         self.canvasPLPW.pack()
 
-        self.plpw_label = tk.Label(self.graph2_frame, text="Graph 2: Petal Length vs Petal Width", font=("Arial", 12))
+        self.plpw_label = tk.Label(self.graph2_frame, text="Graph 2: Petal Length vs Petal Width", font=("Arial", 18))
         self.plpw_label.pack(pady=5)
 
         self.pl_pw_frame = tk.Frame(self.graph2_frame)
         self.pl_pw_frame.pack()
 
-        tk.Label(self.pl_pw_frame, text="Petal Length:").grid(row=0, column=0, padx=5, pady=5)
-        self.pl_entry = tk.Entry(self.pl_pw_frame, width=10)
-        self.pl_entry.grid(row=0, column=1, padx=5, pady=5)
+        tk.Label(self.pl_pw_frame, text="Petal Length:").grid(row=0, column=0, padx=15, pady=15)
+        self.pl_entry = tk.Entry(self.pl_pw_frame, width=20)
+        self.pl_entry.grid(row=0, column=1, padx=15, pady=15)
 
-        tk.Label(self.pl_pw_frame, text="Petal Width:").grid(row=1, column=0, padx=5, pady=5)
-        self.pw_entry = tk.Entry(self.pl_pw_frame, width=10)
-        self.pw_entry.grid(row=1, column=1, padx=5, pady=5)
+        tk.Label(self.pl_pw_frame, text="Petal Width:").grid(row=1, column=0, padx=15, pady=15)
+        self.pw_entry = tk.Entry(self.pl_pw_frame, width=20)
+        self.pw_entry.grid(row=1, column=1, padx=15, pady=15)
 
         # Create a bottom frame to contain the instruction, predict button and result label
         self.bottom_frame = tk.Frame(self.root)
@@ -104,17 +104,17 @@ class VisualizerModule:
 
         # Add Make Prediction Button
         self.predict_button = tk.Button(self.bottom_frame, text="Make Prediction", command=self.input_prediction)
-        self.predict_button.pack(side=tk.BOTTOM, pady=5)
+        self.predict_button.pack(side=tk.BOTTOM, pady=10)
 
-        self.result_label = tk.Label(self.bottom_frame, text="Predicted Variety: ", font=("Arial", 14))
-        self.result_label.pack(side=tk.BOTTOM, pady=5)
+        self.result_label = tk.Label(self.bottom_frame, text="Predicted Variety: ", font=("Arial", 18))
+        self.result_label.pack(side=tk.BOTTOM, pady=10)
 
         # Add program instruction after the graph
         self.instruction = tk.Label(
             self.bottom_frame,
             text="You can input some iris data below to make a prediction, and the predicted variety will be shown on the graph.\n"
                  "Please enter numbers between 0 and 10.",
-            font=("Arial", 16),
+            font=("Arial", 18),
             justify="center"
         )
         self.instruction.pack(side=tk.BOTTOM, pady=5)
@@ -140,39 +140,39 @@ class VisualizerModule:
         Draw X-axis and Y-axis on the graph.
         """
         # Draw coordinate axes
-        canvas.create_line(50, 500, 500, 500, width=2)  # X-axis
-        canvas.create_line(50, 500, 50, 50, width=2)  # Y-axis
+        canvas.create_line(70, 700, 700, 700, width=2)  # X-axis
+        canvas.create_line(70, 700, 70, 70, width=2)  # Y-axis
 
         # Label scales
         for i in range(11):
-            x = 50 + i * 45
-            y = 500 - i * 45
-            canvas.create_text(x, 510, text=f"{i}", font=("Arial", 10))  # X-axis
-            canvas.create_text(40, y, text=f"{i}", font=("Arial", 10))  # Y-axis
+            x = 70 + i * 63
+            y = 700 - i * 63
+            canvas.create_text(x, 730, text=f"{i}", font=("Arial", 18))  # X-axis
+            canvas.create_text(50, y, text=f"{i}", font=("Arial", 18))  # Y-axis
 
         # Label axes
-        canvas.create_text(275, 530, text=xlabel, font=("Arial", 12))
-        canvas.create_text(20, 275, text=ylabel, font=("Arial", 12), angle=90)
+        canvas.create_text(375, 760, text=xlabel, font=("Arial", 18))
+        canvas.create_text(20, 375, text=ylabel, font=("Arial", 18), angle=90)
 
         # Add legend to the top-right corner
-        canvas.create_text(480, 50, text="Setosa", fill="black", font=("Arial", 10), anchor="ne")
-        canvas.create_text(490, 50, text="●", fill="red", font=("Arial", 10), anchor="ne")
-        canvas.create_text(480, 70, text="Versicolor", fill="black", font=("Arial", 10), anchor="ne")
-        canvas.create_text(490, 70, text="●", fill="green", font=("Arial", 10), anchor="ne")
-        canvas.create_text(480, 90, text="Virginica", fill="black", font=("Arial", 10), anchor="ne")
-        canvas.create_text(490, 90, text="●", fill="blue", font=("Arial", 10), anchor="ne")
-        canvas.create_text(480, 110, text="New Point", fill="black", font=("Arial", 10), anchor="ne")
-        canvas.create_text(490, 110, text="●", fill="orange", font=("Arial", 10), anchor="ne")
+        canvas.create_text(680, 50, text="Setosa", fill="black", font=("Arial", 18), anchor="ne")
+        canvas.create_text(700, 50, text="●", fill="red", font=("Arial", 18), anchor="ne")
+        canvas.create_text(680, 80, text="Versicolor", fill="black", font=("Arial", 18), anchor="ne")
+        canvas.create_text(700, 80, text="●", fill="green", font=("Arial", 18), anchor="ne")
+        canvas.create_text(680, 110, text="Virginica", fill="black", font=("Arial", 18), anchor="ne")
+        canvas.create_text(700, 110, text="●", fill="blue", font=("Arial", 18), anchor="ne")
+        canvas.create_text(680, 140, text="New Point", fill="black", font=("Arial", 18), anchor="ne")
+        canvas.create_text(700, 140, text="●", fill="orange", font=("Arial", 18), anchor="ne")
 
     def draw_point(self, canvas, x, y, color):
         """
         Draw the point on the graph
         """
-        x_transform = 50 + x * 45
-        y_transform = 500 - y * 45
+        x_transform = 70 + x * 63
+        y_transform = 700 - y * 63
 
         canvas.create_oval(
-            x_transform - 5, y_transform - 5, x_transform + 5, y_transform + 5, fill=color, outline=color
+            x_transform - 7, y_transform - 7, x_transform + 7, y_transform + 7, fill=color, outline=color
         )
 
     def input_prediction(self):
