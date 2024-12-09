@@ -4,11 +4,11 @@ Main
 The Main.
 
 Author: Kai
-Version: 1.0
-Date: 2024-11-18
+Version: 2.0
+Date: 2024-12-8
 """
 # src/Main.py
-from src.Controller import Controller
+from Controller import Controller
 
 if __name__ == "__main__":
     app = Controller()
